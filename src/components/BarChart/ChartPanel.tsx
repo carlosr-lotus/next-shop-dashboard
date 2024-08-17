@@ -19,46 +19,44 @@ type Props = {
    values: BarGroup[]
 }
 
+function getBarValues(data: BarGroup[]): number[] {
+    const dataNumbers: number[] = []
+
+    data.map(({valueLeft, valueRight}) => {
+        dataNumbers.push(valueLeft) 
+        dataNumbers.push(valueRight)
+    })
+
+    return dataNumbers.sort((a, b) => a - b) 
+}
+
+function returnMaxNumber(values: number[]): number {
+    return Math.max(...values) 
+}
+
+function returnPercentage(data: BarGroup[], max: number): BarGroup[] {
+    const values = data
+
+    values.map(v => {
+        v.valueLeft = Math.floor((v.valueLeft / max) * 100)
+        v.valueRight = Math.floor((v.valueRight / max) * 100)
+    })
+
+    return values 
+}
+
+function formatValues(data: BarGroup[]): BarGroup[] {
+    const nums = getBarValues(data)
+    const max = returnMaxNumber(nums)
+    const calcNums = returnPercentage(data, max) 
+
+    return calcNums
+}
+
 export default function ChartPanel(props: Props): JSX.Element {
 
     const [verticalValues, setVerticalValues] = useState<number[]>(getBarValues(props.values))
     const [barValues, setBarValues] = useState<BarGroup[]>(formatValues(props.values))
-
-    function getBarValues(data: BarGroup[]): number[] {
-        const dataNumbers: number[] = []
-
-        data.map(({valueLeft, valueRight}) => {
-            dataNumbers.push(valueLeft) 
-            dataNumbers.push(valueRight)
-        })
-
-        console.log(dataNumbers, 'dataNumbers')
-
-        return dataNumbers.sort((a, b) => a - b) 
-    }
-
-    function returnMaxNumber(values: number[]): number {
-        return Math.max(...values) 
-    }
-
-    function returnPercentage(data: BarGroup[], max: number) {
-        const values = data
-
-        values.map(v => {
-            v.valueLeft = Math.floor((v.valueLeft / max) * 100)
-            v.valueRight = Math.floor((v.valueRight / max) * 100)
-        })
-
-        return values 
-    }
-
-    function formatValues(data: BarGroup[]) {
-        const nums = getBarValues(data)
-        const max = returnMaxNumber(nums)
-        const calcNums = returnPercentage(data, max) 
-
-        return calcNums
-    }
 
     return (
         <div className={styles.chartPanel}>
