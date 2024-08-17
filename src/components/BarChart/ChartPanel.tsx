@@ -8,6 +8,10 @@ type VerticalLine = {
     data: number[]
 }
 
+type ChartOptions = {
+    interval: number
+}
+
 type BarGroup = {
     id: number,
     valueLeft: number,
@@ -19,6 +23,11 @@ type Props = {
    values: BarGroup[]
 }
 
+function removeDuplicates(arr: number[]) {
+   return arr.filter((item,
+        index) => arr.indexOf(item) === index)
+}
+
 function getBarValues(data: BarGroup[]): number[] {
     const dataNumbers: number[] = []
 
@@ -26,7 +35,7 @@ function getBarValues(data: BarGroup[]): number[] {
         dataNumbers.push(valueLeft) 
         dataNumbers.push(valueRight)
     })
-
+    
     return dataNumbers.sort((a, b) => a - b) 
 }
 
@@ -55,7 +64,7 @@ function formatValues(data: BarGroup[]): BarGroup[] {
 
 export default function ChartPanel(props: Props): JSX.Element {
 
-    const [verticalValues, setVerticalValues] = useState<number[]>(getBarValues(props.values))
+    const [verticalValues, setVerticalValues] = useState<number[]>(removeDuplicates(getBarValues(props.values)))
     const [barValues, setBarValues] = useState<BarGroup[]>(formatValues(props.values))
 
     return (
@@ -71,21 +80,26 @@ export default function ChartPanel(props: Props): JSX.Element {
 
                     <div className={styles.barGroupContainer}>
                         {
-                            barValues.map((value) => (
-                                <div className={styles.barGroup} key={value.id}> 
-                                        <Bar 
-                                            value={value.valueLeft}
-                                            color='#269149'
-                                        />
-                                        <Bar 
-                                            value={value.valueRight}
-                                            color='grey'
-                                        />
+                            barValues.map((v) => (
+                                <div className={styles.barGroup} key={v.id}> 
+                                    <Bar 
+                                        value={v.valueLeft}
+                                        color='#269149'
+                                    />
+                                    <Bar 
+                                        value={v.valueRight}
+                                        color='grey'
+                                    />
                                 </div>
                             ))
                         } 
                          
                     </div> 
+
+                    <div className={styles.containerLabel}>
+                        {barValues.map(v => <span key={v.id}>{v.label}</span>)}
+                    </div> 
+
                 </> 
             :
             <p>Loading</p>} 

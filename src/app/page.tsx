@@ -20,7 +20,11 @@ export default function Home() {
     { id: 5, valueLeft: 12, valueRight: 44, label: 'Mai/2024' },
     { id: 6, valueLeft: 21, valueRight: 42, label: 'Jun/2024' },
     { id: 7, valueLeft: 46, valueRight: 31, label: 'Jul/2024' },
-    { id: 8, valueLeft: 71, valueRight: 15, label: 'Ago/2024' }
+    { id: 8, valueLeft: 71, valueRight: 15, label: 'Ago/2024' },
+    { id: 9, valueLeft: 71, valueRight: 15, label: 'Set/2024' },
+    { id: 10, valueLeft: 71, valueRight: 15, label: 'Out/2024' },
+    { id: 11, valueLeft: 71, valueRight: 15, label: 'Nov/2024' },
+    { id: 12, valueLeft: 71, valueRight: 15, label: 'Dez/2024' }
   ])
 
   return (

@@ -6,6 +6,7 @@
 
     display: grid;
     grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr max-content;
 }
 
 .verticalLineContainer {
@@ -13,7 +14,7 @@
 }
 
 .lineLabels {
-    padding: 0 .4rem;
+    padding: 0 .4rem .5rem;
 
     display: flex;
     flex-direction: column-reverse;
@@ -48,4 +49,15 @@
 .barGroup > div:nth-child(2) {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
+}
+
+.containerLabel {
+    padding: .6rem;
+
+    grid-column: 2;
+
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 2.5rem;
 }
