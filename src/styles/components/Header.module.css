@@ -1,0 +1,96 @@
+.container {
+    height: 5rem;
+    font-size: 1.2rem;
+
+    border-bottom : .1rem solid var(--line);
+
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.logo {
+    padding-left: 4rem;
+}
+
+.logo > svg {
+    fill: #269149;
+}
+
+.container > ul {
+    height: 100%;
+    list-style-type: none;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.container > ul > li {
+    
+    cursor: pointer;
+}
+
+.container > ul > li:nth-child(1) {
+    height: inherit;
+
+    border-bottom: .2rem solid #269149;
+
+    display: flex;
+    align-items: center;
+}
+
+.sectionTwo {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    place-content: end;
+    align-self: center;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icons > svg {
+    cursor: pointer;
+}
+
+.company {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.company:hover {
+    outline: 1px solid black
+}
+
+.company > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.company > div > span {
+    font-size: 1rem;
+    color: #0057FF;
+}
+
+.iconDashboard {
+    padding: .4rem 1rem;
+    height: 100%;
+    background-color: #269149;
+
+    display: flex;
+    align-items: center;
+}
+
+.iconDashboard > svg {
+    fill: white;
+}

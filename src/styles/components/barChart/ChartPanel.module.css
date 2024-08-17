@@ -1,0 +1,51 @@
+.chartPanel {
+    padding: 1rem;
+    /* padding-bottom: 0; */
+    width: 100%;
+    outline: 1px solid var(--line);
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.verticalLineContainer {
+    display: flex;
+}
+
+.lineLabels {
+    padding: 0 .4rem;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.verticalLine {
+    height: 100%;
+    width: .1rem;
+    background-color: black;
+}
+
+.barGroupContainer {
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 1rem;
+}
+
+.barGroup {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    place-items: end;
+}
+
+.barGroup > div:nth-child(1) {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.barGroup > div:nth-child(2) {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}

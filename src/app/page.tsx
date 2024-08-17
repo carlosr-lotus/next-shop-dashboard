@@ -1,95 +1,93 @@
+'use client'
 import Image from "next/image";
+import { useState } from "react"
+
+// Components
+import Header from "@/components/Header"
+import Filter from "@/components/Filter"
+import Panel from "@/components/Panel"
+import ChartPanel from "@/components/BarChart/ChartPanel"
+
 import styles from "./page.module.css";
 
 export default function Home() {
+
+  const [barChartData, setBarChartData] = useState([
+    { id: 1, valueLeft: 275, valueRight: 45, label: 'Jan/2024' },
+    { id: 2, valueLeft: 225, valueRight: 32, label: 'Fev/2024' },
+    { id: 3, valueLeft: 335, valueRight: 120, label: 'Mar/2024' },
+    { id: 4, valueLeft: 43, valueRight: 352, label: 'Abr/2024' },
+    { id: 5, valueLeft: 12, valueRight: 44, label: 'Mai/2024' },
+    { id: 6, valueLeft: 21, valueRight: 42, label: 'Jun/2024' },
+    { id: 7, valueLeft: 46, valueRight: 31, label: 'Jul/2024' },
+    { id: 8, valueLeft: 71, valueRight: 15, label: 'Ago/2024' }
+  ])
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+        <header className={styles.header}>
+            <Header />
+        </header>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <main className={styles.main}>
+            <Filter />
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+            <Panel
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr 1fr 1fr'
+                }}
+            >
+                <div className={styles.panelDataBox}>
+                    <p>Compradores únicos por semana</p>
+                    <strong>30.211</strong>
+                </div> 
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+                <div className={styles.panelDataBox}>
+                    <p>Total de transações</p>
+                    <strong>965.156</strong>
+                </div> 
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+                <div className={styles.panelDataBox}>
+                    <p>Valor total das transações</p>
+                    <strong>R$ 153.506.846,27</strong>
+                </div> 
+                
+                <div className={styles.panelDataBox}>
+                    <p>Valor médio das transações</p>
+                    <strong>R$ 143,21</strong>
+                </div> 
+            </Panel>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <Panel
+                style={{
+                    display: 'grid',
+                    gridTemplateRows: 'max-content 1fr',
+                    gap: '1rem'
+                }}
+            >
+                <div className={styles.chartHeader}>
+                    <div>
+                        <h2>Gráficos</h2>
+                        <span>Online</span>
+                        <span>Presencial</span>
+                    </div> 
+                    <h3>Canais de venda</h3>
+                </div> 
+
+                <div
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr .5fr',
+                        gap: '1rem'
+                    }}
+                >
+                    <ChartPanel values={barChartData} />
+                    <div>Vertical chart here</div>    
+                </div>
+                
+            </Panel>
+        </main>
+    </>
   );
 }
