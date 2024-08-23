@@ -44,17 +44,17 @@ export default function Home() {
             >
                 <div className={styles.panelDataBox}>
                     <p>Compradores únicos por semana</p>
-                    <strong>30.211</strong>
+                    <strong>31</strong>
                 </div> 
 
                 <div className={styles.panelDataBox}>
                     <p>Total de transações</p>
-                    <strong>965.156</strong>
+                    <strong>3292</strong>
                 </div> 
 
                 <div className={styles.panelDataBox}>
                     <p>Valor total das transações</p>
-                    <strong>R$ 153.506.846,27</strong>
+                    <strong>R$ 50.846,27</strong>
                 </div> 
                 
                 <div className={styles.panelDataBox}>
