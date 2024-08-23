@@ -75,10 +75,18 @@ function returnYAxisValues(data: BarGroup[]): number[] {
     return formattedValues.sort((a, b) => a - b)
 }
 
+function returnXAxisValues(data: BarGroup[]) {
+    return formatValues(data)
+}
+
 export default function ChartPanel(props: Props): JSX.Element {
 
-    const [verticalValues, setVerticalValues] = useState<number[]>(removeDuplicates(returnYAxisValues(props.values)))
-    const [barValues, setBarValues] = useState<BarGroup[]>(formatValues(props.values))
+    const [verticalValues, setVerticalValues] = useState<number[]>(
+        returnYAxisValues(props.values)
+    )
+    const [barValues, setBarValues] = useState<BarGroup[]>(
+        returnXAxisValues(props.values)
+    )
 
     return (
         <div className={styles.chartPanel}>
