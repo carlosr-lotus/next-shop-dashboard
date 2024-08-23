@@ -23,8 +23,15 @@ type Props = {
    values: BarGroup[]
 }
 
-function removeDuplicates(arr: number[]) {
-   return arr.filter((item, index) => arr.indexOf(item) === index)
+function removeDuplicates(arr: number[]): number[] {
+    return arr.filter((item, index) => arr.indexOf(item) === index)
+}
+
+function returnMaxNumber(data: BarGroup[]): number {
+    const max = Math.max(...data.flatMap(d => [d.valueLeft, d.valueRight]))
+    const yAxisMax = Math.ceil(max / 50) * 50
+
+    return yAxisMax 
 }
 
 function getBarValues(data: BarGroup[]): number[] {
@@ -36,10 +43,6 @@ function getBarValues(data: BarGroup[]): number[] {
     })
     
     return dataNumbers.sort((a, b) => a - b) 
-}
-
-function returnMaxNumber(values: number[]): number {
-    return Math.max(...values) 
 }
 
 function returnPercentage(data: BarGroup[], max: number): BarGroup[] {
@@ -54,16 +57,27 @@ function returnPercentage(data: BarGroup[], max: number): BarGroup[] {
 }
 
 function formatValues(data: BarGroup[]): BarGroup[] {
-    const nums = getBarValues(data)
-    const max = returnMaxNumber(nums)
+    const max = returnMaxNumber(data)
     const calcNums = returnPercentage(data, max) 
 
     return calcNums
 }
 
+function returnYAxisValues(data: BarGroup[]): number[] {
+    const max = returnMaxNumber(data) 
+
+    const formattedValues: number[] = []
+
+    for (let c = max; c >= 0; c -= 50) {
+        formattedValues.push(c)
+    }
+
+    return formattedValues.sort((a, b) => a - b)
+}
+
 export default function ChartPanel(props: Props): JSX.Element {
 
-    const [verticalValues, setVerticalValues] = useState<number[]>(removeDuplicates(getBarValues(props.values)))
+    const [verticalValues, setVerticalValues] = useState<number[]>(removeDuplicates(returnYAxisValues(props.values)))
     const [barValues, setBarValues] = useState<BarGroup[]>(formatValues(props.values))
 
     return (
