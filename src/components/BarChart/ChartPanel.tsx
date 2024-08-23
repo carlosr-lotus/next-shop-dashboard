@@ -24,8 +24,7 @@ type Props = {
 }
 
 function removeDuplicates(arr: number[]) {
-   return arr.filter((item,
-        index) => arr.indexOf(item) === index)
+   return arr.filter((item, index) => arr.indexOf(item) === index)
 }
 
 function getBarValues(data: BarGroup[]): number[] {
