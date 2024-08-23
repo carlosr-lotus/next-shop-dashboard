@@ -48,7 +48,7 @@
     align-items: center;
     gap: 2rem;
 
-    place-content: end;
+    place-content: flex-end;
     align-self: center;
 }
 
