@@ -12,7 +12,8 @@ export default function Header() {
             <div className={styles.logo}>
                 <SiShopee size={30}/>
             </div>
-            <ul>
+
+            <ul className={styles.headerMenu}>
                 <li>Transações</li>
                 <li>Performance</li>
                 <li>Risco</li>
@@ -21,6 +22,12 @@ export default function Header() {
                 <li>Relatórios</li>
                 <li>Conta</li>
             </ul> 
+
+            <div className={styles.sectionTwoMobile}>
+                <div className={styles.iconDashboard}>
+                    <FaChartSimple size={25} /> 
+                </div>
+            </div>
 
             <div className={styles.sectionTwo}>
                 <div className={styles.icons}>
