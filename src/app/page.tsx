@@ -7,6 +7,7 @@ import Filter from "@/components/Filter"
 import Panel from "@/components/Panel"
 import ChartPanel from "@/components/BarChart/ChartPanel"
 import TotalPercentage from "@/components/TotalPercentage"
+import DonutChart from "@/components/Donut"
 
 import styles from "./page.module.css";
 
@@ -88,7 +89,14 @@ export default function Home() {
                     }}
                 >
                     <ChartPanel values={barChartData} />
-                    <div>Vertical chart here</div>    
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        border: '1px solid var(--line)'
+                    }}>
+                        <DonutChart /> 
+                    </div>   
                     <TotalPercentage value={50}/>
                 </div>
                 
