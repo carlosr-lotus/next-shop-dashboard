@@ -1,5 +1,7 @@
 :root {
     /** Primary Colors **/
+    --primary-color: #269149;
+    --secondary-color: #48a367;
     --line: #f0f0f0;
 
     font-size: 62.5% /** 1rem = 10px **/
