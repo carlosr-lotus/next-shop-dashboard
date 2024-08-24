@@ -6,6 +6,7 @@ import Header from "@/components/Header"
 import Filter from "@/components/Filter"
 import Panel from "@/components/Panel"
 import ChartPanel from "@/components/BarChart/ChartPanel"
+import TotalPercentage from "@/components/TotalPercentage"
 
 import styles from "./page.module.css";
 
@@ -82,11 +83,13 @@ export default function Home() {
                     style={{
                         display: 'grid',
                         gridTemplateColumns: '1fr .5fr',
+                        gridTemplateRows: '1fr 1fr',
                         gap: '1rem'
                     }}
                 >
                     <ChartPanel values={barChartData} />
                     <div>Vertical chart here</div>    
+                    <TotalPercentage value={50}/>
                 </div>
                 
             </Panel>
