@@ -42,16 +42,6 @@
     place-items: end;
 }
 
-.barGroup > div:nth-child(1) {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-}
-
-.barGroup > div:nth-child(2) {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-}
-
 .containerLabel {
     padding: .6rem;
 
