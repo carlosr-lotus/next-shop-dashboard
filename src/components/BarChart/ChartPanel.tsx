@@ -4,14 +4,6 @@ import Bar from "@/components/BarChart/Bar"
 
 import styles from "@/styles/components/barChart/ChartPanel.module.css"
 
-type VerticalLine = {
-    data: number[]
-}
-
-type ChartOptions = {
-    interval: number
-}
-
 type BarGroup = {
     id: number,
     valueLeft: number,
@@ -23,26 +15,11 @@ type Props = {
    values: BarGroup[]
 }
 
-function removeDuplicates(arr: number[]): number[] {
-    return arr.filter((item, index) => arr.indexOf(item) === index)
-}
-
 function returnMaxNumber(data: BarGroup[]): number {
     const max = Math.max(...data.flatMap(d => [d.valueLeft, d.valueRight]))
     const yAxisMax = Math.ceil(max / 50) * 50
 
     return yAxisMax 
-}
-
-function getBarValues(data: BarGroup[]): number[] {
-    const dataNumbers: number[] = []
-
-    data.map(({valueLeft, valueRight}) => {
-        dataNumbers.push(valueLeft) 
-        dataNumbers.push(valueRight)
-    })
-    
-    return dataNumbers.sort((a, b) => a - b) 
 }
 
 function returnPercentage(data: BarGroup[], max: number): BarGroup[] {
