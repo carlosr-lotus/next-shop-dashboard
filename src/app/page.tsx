@@ -37,31 +37,28 @@ export default function Home() {
         <main className={styles.main}>
             <Filter />
 
-            <Panel
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr 1fr 1fr'
-                }}
-            >
-                <div className={styles.panelDataBox}>
-                    <p>Compradores únicos por semana</p>
-                    <strong>31</strong>
-                </div> 
+            <Panel>
+                <div className={styles.results}>
+                   <div className={styles.panelDataBox}>
+                        <p>Compradores únicos por semana</p>
+                        <strong>31</strong>
+                    </div> 
 
-                <div className={styles.panelDataBox}>
-                    <p>Total de transações</p>
-                    <strong>3292</strong>
-                </div> 
+                    <div className={styles.panelDataBox}>
+                        <p>Total de transações</p>
+                        <strong>3292</strong>
+                    </div> 
 
-                <div className={styles.panelDataBox}>
-                    <p>Valor total das transações</p>
-                    <strong>R$ 50.846,27</strong>
-                </div> 
-                
-                <div className={styles.panelDataBox}>
-                    <p>Valor médio das transações</p>
-                    <strong>R$ 143,21</strong>
-                </div> 
+                    <div className={styles.panelDataBox}>
+                        <p>Valor total das transações</p>
+                        <strong>R$ 50.846,27</strong>
+                    </div> 
+                    
+                    <div className={styles.panelDataBox}>
+                        <p>Valor médio das transações</p>
+                        <strong>R$ 143,21</strong>
+                    </div> 
+                </div>
             </Panel>
 
             <Panel

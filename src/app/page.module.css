@@ -7,6 +7,12 @@
     gap: 2rem;
 }
 
+.results {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
 .panelDataBox {
     display: grid;
     gap: .5rem;
@@ -49,4 +55,19 @@
 
 .chartHeader > div > span:nth-child(3) {
     background-color: grey;
+}
+
+@media (min-width: 768px) {
+    .results {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .results {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 0;
+    }
 }
