@@ -15,7 +15,7 @@
 }
 
 .logo {
-    padding-left: 4rem;
+    padding-left: 2.5rem;
 }
 
 .logo > svg {
@@ -105,6 +105,12 @@
 
 .iconDashboard > svg {
     fill: white;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        padding-left: 4rem;
+    }
 }
 
 @media (min-width: 1024px) {

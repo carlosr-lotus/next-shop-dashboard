@@ -1,6 +1,6 @@
 .main {
     height: calc(100vh - 5rem);
-    padding: 2rem 4rem;
+    padding: 2rem 2.5rem;
 
     display: grid;
     grid-template-rows: max-content max-content;
@@ -69,6 +69,10 @@
 }
 
 @media (min-width: 768px) {
+    .main {
+        padding: 2rem 4rem;
+    }
+
     .results {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
