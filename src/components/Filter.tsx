@@ -9,7 +9,7 @@ import styles from "@/styles/components/Filter.module.css"
 export default function Filter(): JSX.Element {
 
     const [options, setOptions] = useState([
-        { value: 1, label: 'Reais (R$)' }
+        { value: 1, label: '2023' }
     ])
 
     const [defaultValue, setDefaultValue] = useState(options[0])
@@ -22,7 +22,6 @@ export default function Filter(): JSX.Element {
         </div>
         <div className={styles.selects}>
             <Select options={options} value={defaultValue} onChange={(e) => console.log(e)} />
-            <Select options={[]} onChange={(e) => console.log(e)} />
         </div>
        </div> 
     )
