@@ -91,7 +91,8 @@ export default function Home() {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        border: '1px solid var(--line)'
+                        border: '1px solid var(--line)',
+                        borderRadius: '.4rem'
                     }}>
                         <DonutChart /> 
                     </div>   

@@ -1,8 +1,8 @@
 .chartPanel {
     padding: 1rem;
-    /* padding-bottom: 0; */
     width: 100%;
     outline: 1px solid var(--line);
+    border-radius: .4rem;
 
     display: grid;
     grid-template-columns: max-content 1fr;
