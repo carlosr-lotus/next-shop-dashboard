@@ -52,7 +52,7 @@ function returnYAxisValues(data: BarGroup[]): number[] {
     return formattedValues.sort((a, b) => a - b)
 }
 
-function returnXAxisValues(data: BarGroup[]) {
+function returnXAxisValues(data: BarGroup[]): BarGroup[]{
     return formatValues(data)
 }
 
