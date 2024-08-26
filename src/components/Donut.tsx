@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 const DonutChart: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', 'orange']
+    const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#A453BC']
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -79,7 +79,7 @@ const DonutChart: React.FC = () => {
 
 function drawDonutChart(ctx: CanvasRenderingContext2D, width: number, height: number) { 
     const data = [5, 10, 20, 40, 25]
-    const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', 'orange']
+    const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#A453BC']
     const labels = ['5%', '10%', '20%', '40%', '25%']
     const total = data.reduce((acc, curr) => acc + curr, 0)
 
