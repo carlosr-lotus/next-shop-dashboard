@@ -9,7 +9,7 @@ import styles from "@/styles/components/Filter.module.css"
 export default function Filter(): JSX.Element {
 
     const [options, setOptions] = useState([
-        { value: 1, label: '2023' }
+        { value: 1, label: '2024' }
     ])
 
     const [defaultValue, setDefaultValue] = useState(options[0])

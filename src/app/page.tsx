@@ -14,18 +14,14 @@ import styles from "./page.module.css";
 export default function Home() {
 
   const [barChartData, setBarChartData] = useState([
-    { id: 1, valueLeft: 523, valueRight: 45, label: 'Jan/2024' },
-    { id: 2, valueLeft: 250, valueRight: 32, label: 'Fev/2024' },
+    { id: 1, valueLeft: 323, valueRight: 45, label: 'Jan/2024' },
+    { id: 2, valueLeft: 450, valueRight: 32, label: 'Fev/2024' },
     { id: 3, valueLeft: 300, valueRight: 120, label: 'Mar/2024' },
     { id: 4, valueLeft: 43, valueRight: 352, label: 'Abr/2024' },
-    { id: 5, valueLeft: 6, valueRight: 44, label: 'Mai/2024' },
+    { id: 5, valueLeft: 26, valueRight: 44, label: 'Mai/2024' },
     { id: 6, valueLeft: 21, valueRight: 42, label: 'Jun/2024' },
-    { id: 7, valueLeft: 46, valueRight: 31, label: 'Jul/2024' },
-    { id: 8, valueLeft: 471, valueRight: 150, label: 'Ago/2024' },
-    { id: 9, valueLeft: 543, valueRight: 15, label: 'Set/2024' },
-    { id: 10, valueLeft: 71, valueRight: 15, label: 'Out/2024' },
-    { id: 11, valueLeft: 71, valueRight: 15, label: 'Nov/2024' },
-    { id: 12, valueLeft: 71, valueRight: 15, label: 'Dez/2024' }
+    { id: 7, valueLeft: 146, valueRight: 31, label: 'Jul/2024' },
+    { id: 8, valueLeft: 471, valueRight: 150, label: 'Ago/2024' }
   ])
 
   return (
